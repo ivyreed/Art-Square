@@ -1,6 +1,7 @@
-const { User } = require("../models");
+const { Art } = require("../models");
 const { signToken } = require("../utils/auth");
 
+// get existing rating
 module.exports = {
   async getSingleUser({ user = null, params }, res) {
     try {
@@ -21,7 +22,7 @@ module.exports = {
     }
   },
 
-  async createUser({ body }, res) {
+  async createArt({ body }, res) {
     try {
       const user = await User.create(body);
       const token = signToken(user);
@@ -55,40 +56,4 @@ module.exports = {
       res.status(500).json({ message: "Server Error" });
     }
   },
-
-  // art area
-
-  // rating area
-
-  async createRating({ body }, res) {
-    try {
-      const user = await rating.create(body);
-      const token = signToken(user);
-      res.status(201).json({ token, user });
-    } catch (error) {
-      console.error(error);
-      res.status(400).json({ message: "Failed to create rating" });
-    }
-  },
-  // get all ratings per user
-  async getArtRatings(req, res) {
-    try {
-      const rating = await rating.find();
-      const allRatings = await Rating.find({ art: body.artId });
-      res.status(201).json({ message: "Rating found!", allRatings });
-      res.json(rating);
-    } catch (err) {
-      console.error(error);
-      res.status(500).json({ message: "Failed to retrieve art rating" });
-    }
-  },
-  // get all ratings per art
-  // async getUserRating(req, res) {
-  //   try {
-  //     const rating = await rating.find();
-  //     res.json(rating);
-  //   } catch (err) {
-  //     res.status(500).json({ message: "Failed to retrieve user rating" });
-  //   }
-  // },
 };
