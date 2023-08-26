@@ -5,14 +5,24 @@ const path = require("path");
 const { authMiddleware } = require("./utils/auth");
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
+const cloudinary = require('cloudinary').v2;
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+cloudinary.config({ 
+  cloud_name: 'dn3ua86cz', 
+  api_key: process.env.CLOUDINARY_API_KEY, 
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+  secure: true
+});
 
 const server = new ApolloServer({
   typeDefs,
   resolvers
 });
+
 
 const startApolloServer = async () => {
   await server.start();

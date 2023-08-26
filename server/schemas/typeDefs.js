@@ -20,8 +20,17 @@ const typeDefs = `#graphql
     user: User
   }
 
+  type ArtImage {
+  public_id: String
+  secure_url: String
+  tags: [String]
+  description: String
+  title: String
+}
+
   type Query {
     me: User
+    getGalleryImages: [ArtImage]
   }
 
   type Mutation {
