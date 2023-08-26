@@ -1,6 +1,7 @@
 const { signToken } = require('../utils/auth');
 const { User } = require("../models");
 const { AuthenticationError } = require('apollo-server');
+const cloudinary = require('cloudinary').v2;
 
 const resolvers = {
   Query: {
@@ -10,7 +11,23 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    getGalleryImages: async () => {
+      const response = await cloudinary.search
+        // .expression('tags:gallery-images')
+        .sort_by('public_id', 'desc')
+        .execute();
+
+      const artImages = response.resources.map((resource) => ({
+        public_id: resource.public_id,
+        secure_url: resource.secure_url,
+        tags: resource.tags,
+        description: resource.context && resource.context.custom && resource.context.custom.description ? resource.context.custom.description : '',
+        title: resource.context && resource.context.custom && resource.context.custom.title ? resource.context.custom.title : '',
+      }));
+      return artImages;
+    },
   },
+
   Mutation: {
     addUser: async (parent, { username, email, password }) => {
       console.log("resolvers", username, email, password);
@@ -35,6 +52,6 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-  },
+  }
 };
 module.exports = resolvers;

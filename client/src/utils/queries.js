@@ -15,3 +15,16 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const GET_GALLERY_IMAGES = gql`
+  query getGalleryImages {
+    getGalleryImages {
+      public_id
+      secure_url
+      tags
+      description
+      title
+    }
+  }
+`;
+

@@ -8,7 +8,8 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-
+import UploadWidget from './components/uploadWidget';
+import ArtGallery from './pages/ArtGallery';
 import Navbar from './components/Navbar';
 
 const httpLink = createHttpLink({
@@ -34,12 +35,15 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
-      <Navbar />
-      <Outlet />
+        <Navbar />
+        <div className='widgetContainer'>
+          <UploadWidget />
+        </div>
+        <ArtGallery />
+        <Outlet />
       </ApolloProvider>
     </>
   );
 }
-
 
 export default App;
