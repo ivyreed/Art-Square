@@ -24,7 +24,9 @@ const Navbar = () => {
           <div>
             {Auth.loggedIn() ? (
               <div className="button-container">
-                <div className="widgetContainer">{/* <UploadWidget /> */}</div>
+                <div className="widgetContainer">
+                  <UploadWidget />
+                </div>
                 <button onClick={Auth.logout}>Logout</button>
               </div>
             ) : (
