@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 cloudinary.config({ 
-  cloud_name: 'dn3ua86cz', 
+  cloud_name: 'dilktgpeb', 
   api_key: process.env.CLOUDINARY_API_KEY, 
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true
