@@ -40,29 +40,16 @@ const client = new ApolloClient({
 function App() {
   const isLoggedIn = AuthService.loggedIn();
   return (
-<<<<<<< HEAD
-    <>
-      <ApolloProvider client={client}>
-        <Navbar />
-        <ProfileBar
+
+        <ApolloProvider client={client}>
+      <Navbar />
+      <ProfileBar
         username="test_user"
         avatarUrl="https://via.placeholder.com/150"
         firstName="John"
         lastName="Doe"
         numberOfImages={10} // Replace with the actual number of images
       />
-
-        <div className='widgetContainer'>
-          <UploadWidget />
-        </div>
-
-        <ArtGallery />
-        <Outlet />
-      </ApolloProvider>
-    </>
-=======
-    <ApolloProvider client={client}>
-      <Navbar />
       <div className='widgetContainer'>
         {isLoggedIn && (
           <div className='widgetContainer'>
@@ -73,7 +60,6 @@ function App() {
       </div>
       <Outlet />
     </ApolloProvider>
->>>>>>> 3e1686342f9117d7be1bb9cee2e33cf9f93df10d
   );
 }
 
