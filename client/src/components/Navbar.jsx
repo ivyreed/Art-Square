@@ -1,73 +1,76 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Navbar, Nav, Container, Modal, Tab } from 'react-bootstrap';
-import SignUpForm from './SignupForm';
-import LoginForm from './LoginForm';
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import SignUpForm from "./SignupForm";
+import LoginForm from "./LoginForm";
+import navBrand from "../assets/images/desktop_brand.svg";
+import "../assets/styles/navbar.css";
 
-import Auth from '../utils/auth';
+import Auth from "../utils/auth";
 
-const AppNavbar = () => {
-  // set modal display state
-  const [showModal, setShowModal] = useState(false);
+const Navbar = () => {
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const location = useLocation();
 
   return (
-    <>
-      <Navbar bg='dark' variant='dark' expand='lg'>
-        <Container fluid>
-          <Navbar.Brand as={Link} to='/'>
-            Art Square
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls='navbar' />
-          <Navbar.Collapse id='navbar' className='d-flex flex-row-reverse'>
-            <Nav className='ml-auto d-flex'>
-              <Nav.Link as={Link} to='/'>
-              </Nav.Link>
-              {/* if user is logged in show saved books and logout */}
-              {Auth.loggedIn() ? (
-                <>
-                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
-                </>
-              ) : (
-                <Nav.Link onClick={() => setShowModal(true)}>Login/Sign Up</Nav.Link>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      {/* set modal data up */}
-      <Modal
-        size='lg'
-        show={showModal}
-        onHide={() => setShowModal(false)}
-        aria-labelledby='signup-modal'>
-        {/* tab container to do either signup or login component */}
-        <Tab.Container defaultActiveKey='login'>
-          <Modal.Header closeButton>
-            <Modal.Title id='signup-modal'>
-              <Nav variant='pills'>
-                <Nav.Item>
-                  <Nav.Link eventKey='login'>Login</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey='signup'>Sign Up</Nav.Link>
-                </Nav.Item>
-              </Nav>
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <Tab.Content>
-              <Tab.Pane eventKey='login'>
-                <LoginForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-              <Tab.Pane eventKey='signup'>
-                <SignUpForm handleModalClose={() => setShowModal(false)} />
-              </Tab.Pane>
-            </Tab.Content>
-          </Modal.Body>
-        </Tab.Container>
-      </Modal>
-    </>
+    <div>
+      <nav>
+        <div className="nav-container">
+          <div>
+            <Link to="/">
+              <img src={navBrand} alt="Art Square Logo" />
+            </Link>
+          </div>
+          <div>
+            {Auth.loggedIn() ? (
+              <button onClick={Auth.logout}>Logout</button>
+            ) : (
+              <div className="button-container">
+                <button onClick={() => setShowLoginModal(true)}>Login</button>
+                <button onClick={() => setShowSignUpModal(true)}>
+                  Sign Up
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </nav>
+
+      {showLoginModal && (
+        <div className="nav-right">
+          <div>
+            <button onClick={() => setShowLoginModal(false)}>Close</button>
+            <div>
+              <button>Login</button>
+              <button>Sign Up</button>
+            </div>
+          </div>
+          <div>
+            {location.pathname === "/login" && (
+              <LoginForm handleModalClose={() => setShowLoginModal(false)} />
+            )}
+          </div>
+        </div>
+      )}
+
+      {showSignUpModal && (
+        <div>
+          <div>
+            <button onClick={() => setShowSignUpModal(false)}>Close</button>
+            <div>
+              <button>Login</button>
+              <button>Sign Up</button>
+            </div>
+          </div>
+          <div>
+            {location.pathname === "/signup" && (
+              <SignUpForm handleModalClose={() => setShowSignUpModal(false)} />
+            )}
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
-export default AppNavbar;
+export default Navbar;
