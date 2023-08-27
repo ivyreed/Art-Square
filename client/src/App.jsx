@@ -1,5 +1,6 @@
 import './App.css';
 import { Outlet } from 'react-router-dom';
+import AuthService from './utils/auth'; 
 
 import { 
   ApolloClient,
@@ -37,7 +38,9 @@ const client = new ApolloClient({
 });
 
 function App() {
+  const isLoggedIn = AuthService.loggedIn();
   return (
+<<<<<<< HEAD
     <>
       <ApolloProvider client={client}>
         <Navbar />
@@ -57,6 +60,20 @@ function App() {
         <Outlet />
       </ApolloProvider>
     </>
+=======
+    <ApolloProvider client={client}>
+      <Navbar />
+      <div className='widgetContainer'>
+        {isLoggedIn && (
+          <div className='widgetContainer'>
+            <UploadWidget />
+          </div>
+        )}
+        <ArtGallery isLoggedIn={isLoggedIn} />
+      </div>
+      <Outlet />
+    </ApolloProvider>
+>>>>>>> 3e1686342f9117d7be1bb9cee2e33cf9f93df10d
   );
 }
 
