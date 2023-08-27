@@ -1,8 +1,5 @@
-/* colors */
-$primary: hsl(30, 8%, 85%);
-$primary-light: hsl(30, 8%, 95%);
-$primary-dark: hsl(30, 8%, 10%);
-$primary-medium: hsl(30, 8%, 20%);
+@import "Variables";
+@import "Mixins";
 
 /* Resets the box size of every element */
 * {

@@ -1,19 +1,8 @@
-$primary: hsl(30, 8%, 85%);
-$primary-light: hsl(30, 8%, 95%);
-$primary-dark: hsl(30, 8%, 10%);
-$primary-medium: hsl(30, 8%, 20%);
-$primary-button: hsl(349, 53%, 75%);
-$primary-button-hover: hsl(349, 53%, 65%);
+@import "Variables";
+@import "Mixins";
 
 * {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-@mixin center-flexbox($direction: row) {
-  display: flex;
-  flex-direction: $direction;
-  justify-content: center;
-  align-items: center;
 }
 
 button {
@@ -21,6 +10,7 @@ button {
   color: $primary-medium;
   text-align: center;
   vertical-align: middle;
+
   border: none;
   padding: 0.375rem 0.75rem;
   border-radius: 0.25rem;

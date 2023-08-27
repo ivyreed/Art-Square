@@ -1,103 +1,38 @@
-.login-form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
-}
-.login-form .alert {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-.login-form .alert:hover {
-  background-color: #f5c6cb;
-}
-.login-form .form-group {
-  margin-bottom: 1rem;
-}
-.login-form .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.login-form .form-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color 0.3s;
-}
-.login-form .form-group input:focus {
-  border-color: #80bdff;
-  outline: none;
-}
-.login-form button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 0.25rem;
-}
-.login-form button:hover {
-  background-color: #218838;
-}
-.login-form button:disabled {
-  cursor: not-allowed;
-  background-color: #c3e6cb;
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
-.signup-form {
-  width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(30, 8%, 95%);
+  padding: 16px 24px;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  gap: 8px;
+  z-index: 0;
 }
-.signup-form .alert {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
+form .input-container {
+  width: 25vw;
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
 }
-.signup-form .alert:hover {
-  background-color: #f5c6cb;
-}
-.signup-form .form-group {
-  margin-bottom: 1rem;
-}
-.signup-form .form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-.signup-form .form-group input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color 0.3s;
-}
-.signup-form .form-group input:focus {
-  border-color: #80bdff;
-  outline: none;
-}
-.signup-form button {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 0.25rem;
-}
-.signup-form button:hover {
-  background-color: #218838;
-}
-.signup-form button:disabled {
-  cursor: not-allowed;
-  background-color: #c3e6cb;
-}/*# sourceMappingURL=Forms.css.map */
+
+.modal-bg {
+  position: absolute;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+}/*# sourceMappingURL=forms.css.map */
