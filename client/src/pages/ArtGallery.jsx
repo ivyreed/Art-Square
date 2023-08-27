@@ -3,14 +3,18 @@ import { GET_GALLERY_IMAGES } from '../utils/queries';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
 
-const ArtGallery = () => {
+const ArtGallery = ({ isLoggedIn }) => {
     const { loading, data } = useQuery(GET_GALLERY_IMAGES);
 
-if (loading) {
-  return <div>Loading...</div>;
-}
-
-const galleryImages = data?.getGalleryImages || [];
+    if (!isLoggedIn) {
+      return <div>Please log in to view the art gallery.</div>;
+    }
+  
+    if (loading) {
+      return <div>Loading...</div>;
+    }
+  
+    const galleryImages = data?.getGalleryImages || [];
 console.log(galleryImages);
   
     return (
@@ -32,4 +36,5 @@ console.log(galleryImages);
       </Container>      
     );
   };
+
 export default ArtGallery;  
