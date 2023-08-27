@@ -3,20 +3,18 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import App from './App.jsx'
-// import Profile from './pages/Profile.js'
+import ArtGallery from './pages/ArtGallery.jsx'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
     errorElement: <h1 className='display-2'>Wrong page!</h1>,
-    // children: [
-    //   {
-    //     index: true,
-    //     element: <Profile />
-    //   },
-    // ]
-  }
+  },
+  {
+    path: '/gallery-art',
+    element: <ArtGallery />,
+  },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
