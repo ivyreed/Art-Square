@@ -1,0 +1,85 @@
+* {
+  animation-timing-function: ease-in-out;
+}
+
+.page {
+  display: flex;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+.page .modal-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  transform: rotate(45deg);
+  transition: 0.5s;
+}
+.page .modal-container-active {
+  transform: rotate(-45deg);
+  transition: 0.5s;
+}
+.page .modal-bg-left,
+.page .modal-bg-right {
+  display: flex;
+}
+.page .modal-bg-left {
+  position: relative;
+  width: 50vw;
+  height: 100vh;
+}
+.page .modal-bg-left .modal-bg-one {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: -50vh;
+  background-color: blue;
+  width: 100vw;
+  height: 100vw;
+  transition: 0.5s;
+}
+.page .modal-bg-left .modal-bg-one.activeOne {
+  transform: translateX(-100vw);
+  transition: 0.5s;
+}
+.page .modal-bg-right {
+  flex-direction: column;
+}
+.page .modal-bg-right .modal-right-top,
+.page .modal-bg-right .modal-right-bottom {
+  display: flex;
+  position: relative;
+  width: 50vw;
+}
+.page .modal-bg-right .modal-right-top {
+  height: 50vh;
+}
+.page .modal-bg-right .modal-right-top .modal-bg-two {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: yellow;
+  width: 100vw;
+  height: 100vw;
+  transition: 0.5s;
+}
+.page .modal-bg-right .modal-right-top .modal-bg-two.activeTwo {
+  transform: translateY(-100vw);
+  transition: 0.5s;
+}
+.page .modal-bg-right .modal-right-bottom {
+  height: 50vh;
+}
+.page .modal-bg-right .modal-right-bottom .modal-bg-three {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: red;
+  width: 100vw;
+  height: 100vh;
+  transition: 0.5s;
+}
+.page .modal-bg-right .modal-right-bottom .modal-bg-three.activeThree {
+  transform: translateX(100vw);
+  transition: 0.5s;
+}/*# sourceMappingURL=Modal.css.map */

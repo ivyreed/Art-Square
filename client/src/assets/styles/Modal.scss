@@ -1,0 +1,99 @@
+* {
+  animation-timing-function: ease-in-out;
+}
+
+.page {
+  display: flex;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+  .modal-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    transform: rotate(45deg);
+    transition: 0.5s;
+
+    &-active {
+      transform: rotate(-45deg);
+      transition: 0.5s;
+    }
+  }
+
+  .modal-bg-left,
+  .modal-bg-right {
+    display: flex;
+  }
+
+  .modal-bg-left {
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+
+    .modal-bg-one {
+      display: flex;
+      position: absolute;
+      right: 0;
+      top: -50vh;
+      background-color: blue;
+      width: 100vw;
+      height: 100vw;
+      transition: 0.5s;
+
+      &.activeOne {
+        transform: translateX(-100vw);
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .modal-bg-right {
+    flex-direction: column;
+
+    .modal-right-top,
+    .modal-right-bottom {
+      display: flex;
+      position: relative;
+      width: 50vw;
+    }
+
+    .modal-right-top {
+      height: 50vh;
+
+      .modal-bg-two {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        background-color: yellow;
+        width: 100vw;
+        height: 100vw;
+        transition: 0.5s;
+
+        &.activeTwo {
+          transform: translateY(-100vw);
+          transition: 0.5s;
+        }
+      }
+    }
+
+    .modal-right-bottom {
+      height: 50vh;
+
+      .modal-bg-three {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: red;
+        width: 100vw;
+        height: 100vh;
+        transition: 0.5s;
+
+        &.activeThree {
+          transform: translateX(100vw);
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}
