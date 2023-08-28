@@ -17,7 +17,7 @@ button {
 
 button:hover {
   background-color: hsl(349, 53%, 65%);
-  color: hsl(30, 8%, 85%);
+  color: hsl(30, 8%, 95%);
 }
 
 .button-container {

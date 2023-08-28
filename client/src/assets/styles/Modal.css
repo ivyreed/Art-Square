@@ -1,85 +1,74 @@
 * {
-  animation-timing-function: ease-in-out;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
 }
 
-.page {
-  display: flex;
-  background-color: black;
-  width: 100vw;
-  height: 100vh;
-}
-.page .modal-container {
+.modal-bg-container {
   display: flex;
   width: 100vw;
   height: 100vh;
-  transform: rotate(45deg);
-  transition: 0.5s;
-}
-.page .modal-container-active {
   transform: rotate(-45deg);
   transition: 0.5s;
 }
-.page .modal-bg-left,
-.page .modal-bg-right {
-  display: flex;
-}
-.page .modal-bg-left {
+
+.modal-bg-left {
   position: relative;
+  display: flex;
   width: 50vw;
   height: 100vh;
 }
-.page .modal-bg-left .modal-bg-one {
+
+.modal-bg-one {
   display: flex;
   position: absolute;
-  right: 0;
-  top: -50vh;
-  background-color: blue;
-  width: 100vw;
-  height: 100vw;
-  transition: 0.5s;
-}
-.page .modal-bg-left .modal-bg-one.activeOne {
+  background-color: hsl(349, 53%, 75%);
+  width: 200vw;
+  height: 200vw;
   transform: translateX(-100vw);
-  transition: 0.5s;
 }
-.page .modal-bg-right {
+.modal-bg-one.active {
+  transform: translateX(0vw);
+  right: 0;
+  top: -100vh;
+}
+
+.modal-bg-right {
+  display: flex;
   flex-direction: column;
 }
-.page .modal-bg-right .modal-right-top,
-.page .modal-bg-right .modal-right-bottom {
+
+.modal-right-bottom,
+.modal-right-top {
   display: flex;
   position: relative;
   width: 50vw;
-}
-.page .modal-bg-right .modal-right-top {
   height: 50vh;
 }
-.page .modal-bg-right .modal-right-top .modal-bg-two {
+
+.modal-bg-two {
   position: absolute;
+  background-color: hsl(332, 31%, 95%);
+  transform: translateY(-100vw);
   bottom: 0;
   left: 0;
-  background-color: yellow;
-  width: 100vw;
-  height: 100vw;
-  transition: 0.5s;
+  width: 200vw;
+  height: 200vw;
 }
-.page .modal-bg-right .modal-right-top .modal-bg-two.activeTwo {
-  transform: translateY(-100vw);
-  transition: 0.5s;
+.modal-bg-two.active {
+  transform: translateY(0vw);
+  bottom: 0;
+  left: 0;
 }
-.page .modal-bg-right .modal-right-bottom {
-  height: 50vh;
-}
-.page .modal-bg-right .modal-right-bottom .modal-bg-three {
+
+.modal-bg-three {
   position: absolute;
+  background-color: hsl(255, 48%, 45%);
+  width: 200vw;
+  height: 200vh;
+  transform: translateX(100vw);
+}
+.modal-bg-three.active {
+  transform: translateX(0vw);
   top: 0;
   left: 0;
-  background-color: red;
-  width: 100vw;
-  height: 100vh;
-  transition: 0.5s;
-}
-.page .modal-bg-right .modal-right-bottom .modal-bg-three.activeThree {
-  transform: translateX(100vw);
-  transition: 0.5s;
 }/*# sourceMappingURL=Modal.css.map */
