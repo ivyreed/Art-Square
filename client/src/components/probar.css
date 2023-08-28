@@ -21,14 +21,15 @@
 
 .username {
     color: white;
-    font-size:10px;
+    font-size:32px;
     font-weight: bold;
 }
 
 .name-follow {
     display: flex;
     align-items: center;
-    margin-left: 12px;
+    margin-bottom: -22px;
+    padding-bottom: 4px;
 }
 
 .follow-btn{
@@ -36,8 +37,10 @@
     background-color: red;
     cursor: pointer;
     margin-left: 10px;
-    font-size: 12px;
+    font-size: 16px;
     color: white;
+    padding-right: 24px;
+    padding-left: 24px;
     border-radius: 5px;
 }
 
@@ -46,5 +49,9 @@
     font-size: 20px;
 }
 .imageTotal{
-    font-size: 15px;
+    font-size: 16px;
+}
+
+.text-info{
+    padding-left: 16px;
 }
