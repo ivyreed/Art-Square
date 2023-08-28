@@ -41,39 +41,27 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {showLoginModal && (
-        <div className="nav-right">
-          <div>
-            {/* <button onClick={() => setShowLoginModal(false)}>Close</button> */}
-            {/* <div>
-              <button>Login</button>
-              <button>Sign Up</button>
-            </div> */}
-          </div>
-          <div>
-            {/* {location.pathname === "/login" && ( */}
-            <LoginForm handleModalClose={() => setShowLoginModal(false)} />
-            {/* )} */}
-          </div>
-        </div>
-      )}
-
-      {showSignUpModal && (
+      {/* {showLoginModal && ( */}
+      <div className="nav-right">
         <div>
-          <div>
-            <button onClick={() => setShowSignUpModal(false)}>Close</button>
-            {/* <div>
-              <button>Login</button>
-              <button>Sign Up</button>
-            </div> */}
-          </div>
-          <div>
-            {/* {location.pathname === "/signup" && ( */}
-            <SignUpForm handleModalClose={() => setShowSignUpModal(false)} />
-            {/* )} */}
-          </div>
+          <LoginForm
+            handleModalClose={() => setShowLoginModal(false)}
+            isActive={showLoginModal}
+          />
         </div>
-      )}
+      </div>
+      {/* )} */}
+
+      {/* {showSignUpModal && ( */}
+      <div>
+        <div>
+          <SignUpForm
+            handleModalClose={() => setShowSignUpModal(false)}
+            isActive={showSignUpModal}
+          />
+        </div>
+      </div>
+      {/* )} */}
     </div>
   );
 };
