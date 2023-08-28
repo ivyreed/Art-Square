@@ -12,19 +12,17 @@ const ProfileBar = ({
     <div className="profile-section">
       <div className="profileContentHeader">
         <img className="user-image" src={avatarUrl} alt="profile image" />
-
+<div class="textInfo">
         <div className="name-follow">
           <span className="username">{username}</span>
           <button className="follow-btn">Follow</button>
         </div><br></br>
       
-        <div className="full-name">
-        {firstName} {lastName}
-      </div>
     <div className="imageTotal">{numberOfImages} squares shared </div> 
       
     </div>
     
+    </div>
     </div>
   );
 };
