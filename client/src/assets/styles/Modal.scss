@@ -1,99 +1,82 @@
+@import "Variables";
+
 * {
-  animation-timing-function: ease-in-out;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
 }
 
-.page {
+.modal-bg-container {
   display: flex;
-  background-color: black;
   width: 100vw;
   height: 100vh;
+  transform: rotate(-45deg);
+  transition: 0.5s;
+}
 
-  .modal-container {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    transform: rotate(45deg);
-    transition: 0.5s;
+.modal-bg-left {
+  position: relative;
+  display: flex;
+  width: 50vw;
+  height: 100vh;
+}
 
-    &-active {
-      transform: rotate(-45deg);
-      transition: 0.5s;
-    }
+.modal-bg-one {
+  display: flex;
+  position: absolute;
+
+  background-color: $primary-button;
+  width: 200vw;
+  height: 200vw;
+
+  transform: translateX(-100vw);
+  &.active {
+    transform: translateX(0vw);
+    right: 0;
+    top: -100vh;
   }
+}
 
-  .modal-bg-left,
-  .modal-bg-right {
-    display: flex;
+.modal-bg-right {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-right-bottom,
+.modal-right-top {
+  display: flex;
+  position: relative;
+  width: 50vw;
+  height: 50vh;
+}
+
+.modal-bg-two {
+  position: absolute;
+
+  background-color: $secondary-alt;
+  transform: translateY(-100vw);
+  bottom: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vw;
+
+  &.active {
+    transform: translateY(0vw);
+    bottom: 0;
+    left: 0;
   }
+}
 
-  .modal-bg-left {
-    position: relative;
-    width: 50vw;
-    height: 100vh;
+.modal-bg-three {
+  position: absolute;
 
-    .modal-bg-one {
-      display: flex;
-      position: absolute;
-      right: 0;
-      top: -50vh;
-      background-color: blue;
-      width: 100vw;
-      height: 100vw;
-      transition: 0.5s;
+  background-color: $alt;
+  width: 200vw;
+  height: 200vh;
+  transform: translateX(100vw);
 
-      &.activeOne {
-        transform: translateX(-100vw);
-        transition: 0.5s;
-      }
-    }
-  }
-
-  .modal-bg-right {
-    flex-direction: column;
-
-    .modal-right-top,
-    .modal-right-bottom {
-      display: flex;
-      position: relative;
-      width: 50vw;
-    }
-
-    .modal-right-top {
-      height: 50vh;
-
-      .modal-bg-two {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: yellow;
-        width: 100vw;
-        height: 100vw;
-        transition: 0.5s;
-
-        &.activeTwo {
-          transform: translateY(-100vw);
-          transition: 0.5s;
-        }
-      }
-    }
-
-    .modal-right-bottom {
-      height: 50vh;
-
-      .modal-bg-three {
-        position: absolute;
-        top: 0;
-        left: 0;
-        background-color: red;
-        width: 100vw;
-        height: 100vh;
-        transition: 0.5s;
-
-        &.activeThree {
-          transform: translateX(100vw);
-          transition: 0.5s;
-        }
-      }
-    }
+  &.active {
+    transform: translateX(0vw);
+    top: 0;
+    left: 0;
   }
 }
