@@ -1,6 +1,7 @@
 const { signToken } = require('../utils/auth');
-const { User } = require("../models");
+const { User, Art } = require("../models");
 const { AuthenticationError } = require('apollo-server');
+const { artSchema } = require('../models/Art');
 const cloudinary = require('cloudinary').v2;
 
 const resolvers = {
@@ -52,6 +53,14 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    addArt: async (parent, { secureUrl}) => {
+      Art.create({
+        description: 'description',
+        artId: secureUrl,
+        title: 'title',
+      });
+      return 'Good news everyone';
+    }
   }
 };
 module.exports = resolvers;

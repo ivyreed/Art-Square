@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { model, Schema } = require('mongoose');
 
 const artSchema = new Schema({
   creators: [
@@ -26,5 +26,6 @@ const artSchema = new Schema({
     default: Date.now,
   },
 });
+const Art = model("Art", artSchema);
 
-module.exports = artSchema;
+    module.exports = { Art, artSchema };
