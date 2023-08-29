@@ -53,14 +53,40 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
-    addArt: async (parent, { secureUrl}) => {
-      Art.create({
-        description: 'description',
-        artId: secureUrl,
-        title: 'title',
-      });
-      return 'Good news everyone';
-    }
-  }
+
+
+
+
+
+    addArt: async (parent, {secureUrl}, context) => {
+      const newArt = await Art.create({
+        description: "hello",
+        artUrl: secureUrl,
+        title: "howdy"
+      })
+            if (context.user) {
+                const updatedUser = await User.findOneAndUpdate(
+                  {_id: context.user._id},
+                  {$push:{art:newArt}},
+                  {new:true, runValidators:true});
+                return updatedUser;
+      }
+      throw new AuthenticationError("You need to be logged in!");
+    },
+  },
+
+
+
+
+
+  //   addArt: async (parent, { secureUrl}) => {
+  //     Art.create({
+  //       description: 'description',
+  //       artId: secureUrl,
+  //       title: 'title',
+  //     });
+  //     return 'Good news everyone';
+  //   }
+  // }
 };
 module.exports = resolvers;
