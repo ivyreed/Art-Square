@@ -54,23 +54,15 @@ const Navbar = () => {
         <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
       </div>
 
-      <div className="nav-right">
-        <div>
-          <LoginForm
-            handleModalClose={() => setShowLoginModal(false)}
-            isActive={showLoginModal}
-          />
-        </div>
-      </div>
+      <LoginForm
+        handleModalClose={() => setShowLoginModal(false)}
+        isActive={showLoginModal}
+      />
 
-      <div>
-        <div>
-          <SignUpForm
-            handleModalClose={() => setShowSignUpModal(false)}
-            isActive={showSignUpModal}
-          />
-        </div>
-      </div>
+      <SignUpForm
+        handleModalClose={() => setShowSignUpModal(false)}
+        isActive={showSignUpModal}
+      />
     </div>
   );
 };

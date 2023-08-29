@@ -8,6 +8,7 @@
 .modal-container {
   @include center-flexbox(column);
   position: fixed;
+  padding: 24px;
   top: 0;
   left: 0;
   width: 100vw;
@@ -50,7 +51,7 @@ form {
     }
   }
   @include respond-to(tablet) {
-    width: 90%;
+    width: 100%;
     .input-container {
       gap: 8px;
       width: 100%;

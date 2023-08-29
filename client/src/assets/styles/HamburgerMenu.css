@@ -27,6 +27,9 @@
 .hamburger .line3 {
   bottom: 0;
 }
+.hamburger.active {
+  transition: height 0;
+}
 .hamburger.active .line1 {
   transform: rotate(45deg);
   top: 45%;

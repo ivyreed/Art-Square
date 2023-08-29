@@ -34,6 +34,7 @@
   }
 
   &.active {
+    transition: height 0;
     .line1 {
       transform: rotate(45deg);
       top: 45%;

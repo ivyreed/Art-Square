@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
   position: fixed;
+  padding: 24px;
   top: 0;
   left: 0;
   width: 100vw;
@@ -53,9 +54,9 @@ form .input-container input {
   border-radius: 4px;
   border: 1px solid hsl(30, 8%, 20%);
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 1024px) {
   form {
-    width: 90%;
+    width: 100%;
   }
   form .input-container {
     gap: 8px;
