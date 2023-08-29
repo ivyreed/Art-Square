@@ -19,7 +19,7 @@ const UploadWidget = () => {
                 const  data  = await addArt({
                     variables: { secureUrl: result.info.secure_url },
                 }); 
-                console.log(data)
+                console.log("aa response",data)
             }
            
         });
