@@ -2,6 +2,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 button {
   font-weight: 600;
   color: hsl(30, 8%, 20%);
@@ -27,12 +31,19 @@ button:hover {
   align-items: center;
   gap: 12px;
 }
+@media (max-width: 768px) {
+  .button-container {
+    display: none;
+  }
+}
 
 nav {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 9;
   width: 100%;
   padding: 8px 24px;
   background-color: hsl(30, 8%, 10%);

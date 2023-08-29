@@ -5,6 +5,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 button {
   font-weight: 600;
   color: $primary-medium;
@@ -28,10 +32,15 @@ button:hover {
 .button-container {
   @include center-flexbox(row);
   gap: 12px;
+  @include respond-to(mobile) {
+    display: none;
+  }
 }
 
 nav {
   @include center-flexbox();
+  position: relative;
+  z-index: 9;
   width: 100%;
   padding: 8px 24px;
   background-color: $primary-dark;
