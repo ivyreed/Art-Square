@@ -26,5 +26,5 @@ export default HamburgerMenu;
 
 HamburgerMenu.propTypes = {
   toggleMenu: PropTypes.func.isRequired,
-  isHamburgerActive: PropTypes.bool.isRequired,
+  // isHamburgerActive: PropTypes.bool.isRequired,
 };
