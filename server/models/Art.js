@@ -10,7 +10,7 @@ const artSchema = new Schema({
     type: String,
     required: true,
   },
-  artId: {
+  artUrl: {
     type: String,
     required: true,
   },

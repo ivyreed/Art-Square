@@ -1,12 +1,18 @@
 import { gql } from "@apollo/client";
 export const ADDART = gql`
   mutation addArt($secureUrl: String!) {
-    addArt(secureUrl: $secureUrl)
+    addArt(secureUrl: $secureUrl) {
+      _id
+      email
+      art {
+        artUrl
+      }
+    }
   }
 `;
 export const LOGIN_USER = gql`
   mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+    login(email: $email, password: $password, secureUrl: $secureUrl) {
       token
       user {
         _id
