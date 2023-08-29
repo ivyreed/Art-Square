@@ -1,0 +1,68 @@
+.hamburger {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger .line {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger .line1 {
+  top: 0;
+}
+.hamburger .line2 {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.hamburger .line3 {
+  bottom: 0;
+}
+.hamburger.active .line1 {
+  transform: rotate(45deg);
+  top: 45%;
+}
+.hamburger.active .line2 {
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scaleX(0.6);
+  opacity: 0;
+}
+.hamburger.active .line3 {
+  transform: rotate(-45deg);
+  bottom: 45%;
+}
+
+.menu-items {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-items.active {
+  right: 0;
+}
+.menu-items button {
+  color: white;
+  background-color: transparent;
+  font-size: 1.5rem;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+}/*# sourceMappingURL=HamburgerMenu.css.map */

@@ -1,4 +1,5 @@
 @import "Variables";
+@import "Mixins";
 
 * {
   transition: 1s;
@@ -26,13 +27,17 @@
 
   background-color: $primary-button;
   width: 200vw;
-  height: 200vw;
+  height: 400vw;
+  @include respond-to(mobile) {
+    width: 200vh;
+    height: 200vh;
+  }
 
   transform: translateX(-100vw);
   &.active {
     transform: translateX(0vw);
     right: 0;
-    top: -100vh;
+    top: -60vh;
   }
 }
 
@@ -58,6 +63,10 @@
   left: 0;
   width: 200vw;
   height: 200vw;
+  @include respond-to(mobile) {
+    width: 200vh;
+    height: 200vh;
+  }
 
   &.active {
     transform: translateY(0vw);
@@ -73,6 +82,10 @@
   width: 200vw;
   height: 200vh;
   transform: translateX(100vw);
+  @include respond-to(mobile) {
+    width: 200vh;
+    height: 200vh;
+  }
 
   &.active {
     transform: translateX(0vw);

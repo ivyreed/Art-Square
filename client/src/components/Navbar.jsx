@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
 import UploadWidget from "./UploadWidget";
+import Hamburger from "./HamburgerMenu";
 import navBrand from "../assets/images/desktop_brand.svg";
 import "../assets/styles/navbar.css";
 
@@ -11,9 +12,14 @@ import Auth from "../utils/auth";
 const Navbar = () => {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showSignUpModal, setShowSignUpModal] = useState(false);
+  const [isHamburgerActive, setIsHamburgerActive] = useState(false);
+
+  const toggleMenu = () => {
+    setIsHamburgerActive(!isHamburgerActive);
+  };
 
   return (
-    <div>
+    <div className="nav-component">
       <nav>
         <div className="nav-container">
           <div>
@@ -21,7 +27,9 @@ const Navbar = () => {
               <img src={navBrand} alt="Art Square Logo" />
             </Link>
           </div>
+
           <div>
+            <Hamburger isActive={isHamburgerActive} toggleMenu={toggleMenu} />
             {Auth.loggedIn() ? (
               <div className="button-container">
                 <div className="widgetContainer">
@@ -41,7 +49,11 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/* {showLoginModal && ( */}
+      <div className={`menu-items ${isHamburgerActive ? "active" : ""}`}>
+        <button onClick={() => setShowLoginModal(true)}>Login</button>
+        <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
+      </div>
+
       <div className="nav-right">
         <div>
           <LoginForm
@@ -50,9 +62,7 @@ const Navbar = () => {
           />
         </div>
       </div>
-      {/* )} */}
 
-      {/* {showSignUpModal && ( */}
       <div>
         <div>
           <SignUpForm
@@ -61,7 +71,6 @@ const Navbar = () => {
           />
         </div>
       </div>
-      {/* )} */}
     </div>
   );
 };

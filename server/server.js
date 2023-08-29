@@ -3,26 +3,25 @@ const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const path = require("path");
 const { authMiddleware } = require("./utils/auth");
-const db = require('./config/connection');
-const { typeDefs, resolvers } = require('./schemas');
-const cloudinary = require('cloudinary').v2;
-require('dotenv').config();
+const db = require("./config/connection");
+const { typeDefs, resolvers } = require("./schemas");
+const cloudinary = require("cloudinary").v2;
+require("dotenv").config();
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-cloudinary.config({ 
-  cloud_name: 'dn3ua86cz', 
-  api_key: process.env.CLOUDINARY_API_KEY, 
+cloudinary.config({
+  cloud_name: "prettiestrobot",
+  api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
-  secure: true
+  secure: true,
 });
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers
+  resolvers,
 });
-
 
 const startApolloServer = async () => {
   await server.start();
@@ -45,12 +44,12 @@ const startApolloServer = async () => {
     });
   }
 
-    db.once("open", () => {
-      app.listen(PORT, () => {
-        console.log(`🌍 Now listening on localhost:${PORT}`);
-        console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
-      });
+  db.once("open", () => {
+    app.listen(PORT, () => {
+      console.log(`🌍 Now listening on localhost:${PORT}`);
+      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
     });
-  };
+  });
+};
 
 startApolloServer();

@@ -15,7 +15,7 @@
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
-  z-index: 0;
+  z-index: 10;
 }
 .modal-container.active {
   opacity: 1;
@@ -52,6 +52,15 @@ form .input-container {
 form .input-container input {
   border-radius: 4px;
   border: 1px solid hsl(30, 8%, 20%);
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  form {
+    width: 90%;
+  }
+  form .input-container {
+    gap: 8px;
+    width: 100%;
+  }
 }
 
 .modal-bg {
