@@ -1,11 +1,6 @@
 @import "Variables";
 @import "Mixins";
 
-* {
-  transition: 1s;
-  transition-timing-function: ease-in-out;
-}
-
 .modal-bg-container {
   display: flex;
   width: 100vw;
@@ -24,20 +19,23 @@
 .modal-bg-one {
   display: flex;
   position: absolute;
-
   background-color: $primary-button;
   width: 200vw;
   height: 400vw;
+  transform: translateX(-200vw);
+  top: -60vh;
+  right: 0;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
   @include respond-to(mobile) {
     width: 200vh;
     height: 200vh;
   }
-
-  transform: translateX(-100vw);
   &.active {
     transform: translateX(0vw);
-    right: 0;
-    top: -60vh;
+
+    transition: 1s;
+    transition-timing-function: ease-in-out;
   }
 }
 
@@ -56,13 +54,14 @@
 
 .modal-bg-two {
   position: absolute;
-
   background-color: $secondary-alt;
   transform: translateY(-100vw);
   bottom: 0;
   left: 0;
   width: 200vw;
   height: 200vw;
+  transition: 1s;
+  transition-timing-function: ease-in-out;
   @include respond-to(mobile) {
     width: 200vh;
     height: 200vh;
@@ -72,16 +71,19 @@
     transform: translateY(0vw);
     bottom: 0;
     left: 0;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
   }
 }
 
 .modal-bg-three {
   position: absolute;
-
   background-color: $alt;
   width: 200vw;
   height: 200vh;
   transform: translateX(100vw);
+  transition: 1s;
+  transition-timing-function: ease-in-out;
   @include respond-to(mobile) {
     width: 200vh;
     height: 200vh;
@@ -91,5 +93,7 @@
     transform: translateX(0vw);
     top: 0;
     left: 0;
+    transition: 1s;
+    transition-timing-function: ease-in-out;
   }
 }

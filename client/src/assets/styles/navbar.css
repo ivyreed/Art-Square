@@ -4,6 +4,7 @@
 
 body {
   overflow-x: hidden;
+  width: 100vw;
 }
 
 button {
@@ -42,7 +43,7 @@ nav {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
   z-index: 9;
   width: 100%;
   padding: 8px 24px;
@@ -61,4 +62,4 @@ nav .nav-container img {
 }
 nav .nav-container img:hover {
   color: hsl(349, 53%, 65%);
-}/*# sourceMappingURL=Navbar.css.map */
+}/*# sourceMappingURL=navbar.css.map */
