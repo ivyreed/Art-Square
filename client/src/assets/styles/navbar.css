@@ -46,6 +46,7 @@ nav {
   position: fixed;
   z-index: 9;
   width: 100%;
+  height: 56px;
   padding: 8px 24px;
   background-color: hsl(30, 8%, 10%);
 }

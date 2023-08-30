@@ -16,7 +16,6 @@ html {
 body {
   min-height: 100%;
   width: 100vw;
-
   line-height: 1;
   font-family: sans-serif;
 }
@@ -47,4 +46,8 @@ code {
 ol,
 ul {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }

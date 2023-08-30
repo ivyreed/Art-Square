@@ -1,0 +1,44 @@
+@import "Variables";
+@import "Mixins";
+
+body {
+  background-color: $primary-dark;
+}
+
+/* Gallery Container */
+.gallery-container {
+  @include center-flexbox(column);
+  padding: 24px;
+}
+
+/* Gallery Images */
+.gallery-images {
+  display: grid;
+  grid-template-columns: repeat(3, 260px);
+  gap: 16px;
+  @media (max-width: 860px) {
+    grid-template-columns: repeat(2, 260px);
+  }
+  @media (max-width: 584px) {
+    grid-template-columns: repeat(1, calc(100vw - 48px));
+  }
+}
+
+.gallery-image {
+  display: flex;
+  position: relative;
+}
+
+.gallery-image img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  border: none;
+  border-radius: 0;
+  transition: transform 0.3s;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+}
