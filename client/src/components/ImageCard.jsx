@@ -1,25 +1,36 @@
 import React from "react";
 import RatingComponent from "./RatingComponent";
-import "./ImageCard.css";
 
-const ImageCard = ({ image, updateRating, artUrl, rating }) => {
-  console.log(image)
-  console.log("Rating for Image:", rating);
-  console.log("ImageCard props:", image, rating);
+import "../assets/styles/ImageCard.css";
+
+const calculateAverage = (ratings) => {
+  if (!ratings || ratings.length === 0) {
+    return 0;
+  }
+
+  const totalRatings = ratings.reduce((sum, rating) => sum + rating, 0);
+  const average = totalRatings / ratings.length;
+
+  return average;
+};
+
+const ImageCard = ({ image, updateRating }) => {
+  const averageRating = calculateAverage(image.ratings);
+
 
   return (
     <div className="image-card-overlay">
       <div className="image-card-content">
-      {/* <p>Average Rating: {rating}</p> */}
-        <RatingComponent updateRating={updateRating} artUrl={artUrl} />
+
+        <RatingComponent
+          updateRating={updateRating}
+          averageRating={averageRating}
+        />
+
       </div>
     </div>
   );
 };
 
 
-
 export default ImageCard;
-
-
-

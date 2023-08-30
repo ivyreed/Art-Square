@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import "./RatingComponent.css"; 
-import { useMutation } from '@apollo/client';
-import { ADD_RATING_TO_ART } from '../utils/mutations';
+
+import { useState } from "react";
+import "../assets/styles/ImageCard.css";
+import ProfileImage from "../assets/images/profile.jpg";
+
 
 const RatingComponent = ({ updateRating, artUrl }) => {
   console.log(artUrl);
@@ -29,15 +30,24 @@ const RatingComponent = ({ updateRating, artUrl }) => {
   };
   return (
     <div className="rating-overlay">
-      {[1, 2, 3, 4, 5].map((rating) => (
-        <button
-          key={rating}
-          onClick={() => handleRatingChange(rating)}
-          className={userRating === rating ? "selected" : ""}
-        >
-          {rating}
-        </button>
-      ))}
+      <a href="" className="overlay-user-container">
+        <div className="overlay-image">
+          <img src={ProfileImage}></img>
+        </div>
+        <div className="username">Username</div>
+      </a>
+      <div className="rating-container">
+        {[1, 2, 3, 4, 5].map((rating) => (
+          <button
+            key={rating}
+            onClick={() => handleRatingChange(rating)}
+            className={`rating-btn ${userRating === rating ? "selected" : ""}`}
+          >
+            {rating}
+          </button>
+        ))}
+      </div>
+      <div className="image-average">5/5</div>
     </div>
   );
 };

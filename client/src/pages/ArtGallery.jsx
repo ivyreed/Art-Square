@@ -3,7 +3,9 @@ import { useQuery } from "@apollo/client";
 import { GET_GALLERY_IMAGES } from "../utils/queries";
 import { Card } from "react-bootstrap";
 import ImageCard from "../components/ImageCard.jsx";
-import "./art.css";
+
+import "../assets/styles/Art.css";
+
 
 const ArtGallery = ({ isLoggedIn }) => {
   const { loading, data } = useQuery(GET_GALLERY_IMAGES);
@@ -24,7 +26,6 @@ const ArtGallery = ({ isLoggedIn }) => {
 
   return (
     <div className="gallery-container">
-      <h2>Art Gallery</h2>
       <div className="gallery-images">
         {galleryImages.map((image) => (
           <div key={image.public_id} className="gallery-image">
@@ -38,6 +39,9 @@ const ArtGallery = ({ isLoggedIn }) => {
           </div>
         ))}
       </div>
+      {/* <div className="galler-bg-container">
+        <div className="gallery-bg"></div>
+      </div> */}
     </div>
   );
 };
