@@ -9,6 +9,7 @@ body {
 .gallery-container {
   @include center-flexbox(column);
   padding: 24px;
+  z-index: 0;
 }
 
 /* Gallery Images */
@@ -45,3 +46,20 @@ body {
     transform: scale(1);
   }
 }
+
+// .gallery-bg-container {
+//   display: flex;
+//   position: relative;
+//   width: 100vw;
+//   height: 100vh;
+// }
+
+// .gallery-bg {
+//   background-color: $primary-medium;
+//   width: 50vw;
+//   height: 50vw;
+//   position: absolute;
+//   bottom: -50vh;
+//   right: -25vw;
+//   transform: rotate(-45deg);
+// }

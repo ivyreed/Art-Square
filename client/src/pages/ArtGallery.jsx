@@ -33,6 +33,9 @@ const ArtGallery = ({ isLoggedIn }) => {
           </div>
         ))}
       </div>
+      {/* <div className="galler-bg-container">
+        <div className="gallery-bg"></div>
+      </div> */}
     </div>
   );
 };

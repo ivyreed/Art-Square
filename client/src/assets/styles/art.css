@@ -9,6 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: 24px;
+  z-index: 0;
 }
 
 /* Gallery Images */
