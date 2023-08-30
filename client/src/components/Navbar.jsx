@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
-import UploadWidget from "./UploadWidget";
+import UploadWidget from "./uploadWidget";
 import Hamburger from "./HamburgerMenu";
 import navBrand from "../assets/images/desktop_brand.svg";
 import "../assets/styles/navbar.css";
