@@ -1,6 +1,6 @@
 // see SignupForm.js for comments
 import { useState } from "react";
-import "../assets/styles/forms.css";
+import "../assets/styles/Forms.css";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
