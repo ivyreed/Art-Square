@@ -29,7 +29,7 @@ const ArtGallery = ({ isLoggedIn }) => {
         {galleryImages.map((image) => (
           <div key={image.public_id} className="gallery-image">
             <Card.Img src={image.secure_url} alt={`Artwork: ${image.title}`} />
-            <ImageCard image={image} updateRating={handleUpdateRating} />
+            <ImageCard image={image} updateRating={handleUpdateRating} artUrl={image.secure_url}/>
           </div>
         ))}
       </div>
