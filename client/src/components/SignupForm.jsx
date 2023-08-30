@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../assets/styles/forms.css";
+import "../assets/styles/Forms.css";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
