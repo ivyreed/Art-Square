@@ -1,6 +1,5 @@
 import React from "react";
 import RatingComponent from "./RatingComponent";
-
 import "../assets/styles/ImageCard.css";
 
 const calculateAverage = (ratings) => {
@@ -17,20 +16,16 @@ const calculateAverage = (ratings) => {
 const ImageCard = ({ image, updateRating }) => {
   const averageRating = calculateAverage(image.ratings);
 
-
   return (
     <div className="image-card-overlay">
       <div className="image-card-content">
-
         <RatingComponent
           updateRating={updateRating}
           averageRating={averageRating}
         />
-
       </div>
     </div>
   );
 };
-
 
 export default ImageCard;

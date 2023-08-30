@@ -1,5 +1,5 @@
 const express = require("express");
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
 const path = require("path");
@@ -13,7 +13,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 cloudinary.config({
-  cloud_name: "dn3ua86cz",
+  cloud_name: "prettiestrobot",
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true,
@@ -44,8 +44,6 @@ const startApolloServer = async () => {
       res.sendFile(path.join(__dirname, "../client/dist/index.html"));
     });
   }
-
- 
 
   db.once("open", () => {
     app.listen(PORT, () => {

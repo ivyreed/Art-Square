@@ -2,10 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
-
 import UploadWidget from "./UploadWidget";
 import SearchBar from "./SearchBar";
-
 import Hamburger from "./HamburgerMenu";
 import NavBrand from "../assets/images/desktop_brand.svg";
 import "../assets/styles/navbar.css";
