@@ -10,11 +10,12 @@ const typeDefs = `#graphql
 
   type Art {
     _id: ID
-    artUrl: String
+    artUrl: String!
     creators: [String]
     description: String
     title: String
     image: String
+    averageRating: Float!
   }
 
   type Auth {
@@ -25,6 +26,7 @@ const typeDefs = `#graphql
   type ArtImage {
   public_id: String
   secure_url: String
+
   tags: [String]
   description: String
   title: String
@@ -39,6 +41,7 @@ const typeDefs = `#graphql
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addArt(secureUrl: String!): User
+    addRatingToArt(artUrl: String!, ratingValue: Int!): Art!
 
   
   }

@@ -31,3 +31,12 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_RATING_TO_ART = gql`
+  mutation AddRatingToArt($artUrl: String!, $ratingValue: Int!) {
+    addRatingToArt(artUrl: $artUrl, ratingValue: $ratingValue) {
+      artUrl
+      averageRating
+    }
+  }
+`;
+
