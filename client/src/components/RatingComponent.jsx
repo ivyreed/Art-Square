@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../assets/styles/ImageCard.css";
-import profileImage from "../assets/images/profile.jpg";
+import ProfileImage from "../assets/images/profile.jpg";
 
 const RatingComponent = ({ updateRating }) => {
   const [userRating, setUserRating] = useState(null);
@@ -14,7 +14,7 @@ const RatingComponent = ({ updateRating }) => {
     <div className="rating-overlay">
       <a href="" className="overlay-user-container">
         <div className="overlay-image">
-          <img src={profileImage}></img>
+          <img src={ProfileImage}></img>
         </div>
         <div className="username">Username</div>
       </a>

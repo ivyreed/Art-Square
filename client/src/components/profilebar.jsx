@@ -1,4 +1,4 @@
-import "../assets/styles/probanner.css";
+import "../assets/styles/Probanner.css";
 import profileImage from "../assets/images/profile.jpg";
 
 const ProfileBar = ({ username, avatarUrl, numberOfImages }) => {

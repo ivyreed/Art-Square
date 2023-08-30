@@ -3,7 +3,7 @@ import { useQuery } from "@apollo/client";
 import { GET_GALLERY_IMAGES } from "../utils/queries";
 import { Card } from "react-bootstrap";
 import ImageCard from "../components/ImageCard.jsx";
-import "../assets/styles/art.css";
+import "../assets/styles/Art.css";
 
 const ArtGallery = ({ isLoggedIn }) => {
   const { loading, data } = useQuery(GET_GALLERY_IMAGES);

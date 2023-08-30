@@ -41,4 +41,7 @@ body {
 
 .gallery-image:hover {
   transform: scale(1.05);
+  @media (max-width: 584px) {
+    transform: scale(1);
+  }
 }

@@ -18,6 +18,10 @@
   align-items: center;
   justify-content: center;
   border-radius: 0;
+  @media (max-width: 584px) {
+    width: calc(100% / 5);
+    aspect-ratio: 1/1;
+  }
 }
 
 .rating-overlay {

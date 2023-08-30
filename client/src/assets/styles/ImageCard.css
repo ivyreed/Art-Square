@@ -19,6 +19,12 @@
   justify-content: center;
   border-radius: 0;
 }
+@media (max-width: 584px) {
+  .rating-btn {
+    width: 20%;
+    aspect-ratio: 1/1;
+  }
+}
 
 .rating-overlay {
   position: absolute;
