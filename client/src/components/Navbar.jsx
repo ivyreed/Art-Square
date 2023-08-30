@@ -2,14 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import SignUpForm from "./SignupForm";
 import LoginForm from "./LoginForm";
-
-import UploadWidget from "./UploadWidget";
-import SearchBar from "./SearchBar";
-
+import UploadWidget from "./uploadWidget";
 import Hamburger from "./HamburgerMenu";
-import NavBrand from "../assets/images/desktop_brand.svg";
+import navBrand from "../assets/images/desktop_brand.svg";
 import "../assets/styles/navbar.css";
-import ProfileImage from "../assets/images/profile.jpg";
 
 import Auth from "../utils/auth";
 
@@ -26,18 +22,13 @@ const Navbar = () => {
     <div className="nav-component">
       <nav>
         <div className="nav-container">
-          <div className="nav-left">
+          <div>
             <Link to="/">
-              <img src={NavBrand} alt="Art Square Logo" />
+              <img src={navBrand} alt="Art Square Logo" />
             </Link>
-            <SearchBar />
           </div>
 
-          <div className="nav-right">
-            <a href="" className="nav-profile">
-              <img src={ProfileImage}></img>
-            </a>
-
+          <div>
             <Hamburger isActive={isHamburgerActive} toggleMenu={toggleMenu} />
             {Auth.loggedIn() ? (
               <div className="button-container">
@@ -59,31 +50,8 @@ const Navbar = () => {
       </nav>
 
       <div className={`menu-items ${isHamburgerActive ? "active" : ""}`}>
-        {Auth.loggedIn() ? (
-          <div className="hamburger-items">
-            <div className="widgetContainer hamburger-item">
-              <UploadWidget />
-            </div>
-            <button className="hamburger-item" onClick={Auth.logout}>
-              Logout
-            </button>
-          </div>
-        ) : (
-          <div className="hamburger-items">
-            <button
-              className="hamburger-item"
-              onClick={() => setShowLoginModal(true)}
-            >
-              Login
-            </button>
-            <button
-              className="hamburger-item"
-              onClick={() => setShowSignUpModal(true)}
-            >
-              Sign Up
-            </button>
-          </div>
-        )}
+        <button onClick={() => setShowLoginModal(true)}>Login</button>
+        <button onClick={() => setShowSignUpModal(true)}>Sign Up</button>
       </div>
 
       <LoginForm

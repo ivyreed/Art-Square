@@ -46,7 +46,7 @@
 
 .menu-items {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 0;
   right: -100%;
   width: 100%;
@@ -68,8 +68,4 @@
   margin: 10px 0;
   width: 100%;
   text-align: center;
-}
-
-.hamburger-items {
-  width: 100%;
-}
+}/*# sourceMappingURL=HamburgerMenu.css.map */
