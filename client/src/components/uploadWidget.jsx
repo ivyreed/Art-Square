@@ -24,7 +24,7 @@ const UploadWidget = () => {
            
         });
         
-    }, [])
+    }, [addArt])
     return (
         <button onClick={() => widgetRef.current.open()}>
             Upload

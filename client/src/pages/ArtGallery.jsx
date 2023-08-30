@@ -1,33 +1,26 @@
 import React from "react";
-import { useQuery } from '@apollo/client';
-import { GET_GALLERY_IMAGES } from '../utils/queries';
-import { Card } from 'react-bootstrap';
+import { useQuery } from "@apollo/client";
+import { GET_GALLERY_IMAGES } from "../utils/queries";
+import { Card } from "react-bootstrap";
 import ImageCard from "../components/ImageCard.jsx";
 import "./art.css";
 
-
 const ArtGallery = ({ isLoggedIn }) => {
   const { loading, data } = useQuery(GET_GALLERY_IMAGES);
-
 
   if (!isLoggedIn) {
     return <div>Please log in to view the art gallery.</div>;
   }
 
-
   if (loading) {
     return <div>Loading...</div>;
   }
 
-
   const galleryImages = data?.getGalleryImages || [];
 
-
   const handleUpdateRating = (rating) => {
-    // Implement your rating update logic here
     console.log("Updated rating:", rating);
   };
-
 
   return (
     <div className="gallery-container">
@@ -36,7 +29,12 @@ const ArtGallery = ({ isLoggedIn }) => {
         {galleryImages.map((image) => (
           <div key={image.public_id} className="gallery-image">
             <Card.Img src={image.secure_url} alt={`Artwork: ${image.title}`} />
-            <ImageCard image={image} updateRating={handleUpdateRating} />
+            <ImageCard
+              image={image}
+              rating={image.averageRating}
+              updateRating={handleUpdateRating}
+              artUrl={image.secure_url}
+            />
           </div>
         ))}
       </div>
@@ -44,7 +42,4 @@ const ArtGallery = ({ isLoggedIn }) => {
   );
 };
 
-
 export default ArtGallery;
-
-
