@@ -57,6 +57,9 @@ body {
       max-width: 1920px;
       width: 50vw;
       margin-bottom: 2rem;
+      @media (max-width: 860px) {
+        width: calc(100vw - 48px);
+      }
     }
     .welcome-btn {
       width: 100%;
