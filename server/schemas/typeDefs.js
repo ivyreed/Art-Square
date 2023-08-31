@@ -10,7 +10,7 @@ const typeDefs = `#graphql
 
   type Art {
     _id: ID
-    artUrl: String!
+    artUrl: String
     creators: [String]
     description: String
     title: String
@@ -41,8 +41,8 @@ const typeDefs = `#graphql
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addArt(secureUrl: String!): User
-    addRatingToArt(artUrl: String!, ratingValue: Int!): Art!
+    addArt(secureUrl: String): User
+    addRatingToArt(artUrl: String, ratingValue: Int!): Art!
 
   
   }

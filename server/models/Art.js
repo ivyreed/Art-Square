@@ -12,7 +12,7 @@ const artSchema = new Schema({
   },
   artUrl: {
     type: String,
-    // required: true,
+    required: true,
   },
   image: {
     type: String,
