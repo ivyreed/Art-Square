@@ -41,7 +41,7 @@ nav {
   @include center-flexbox();
   position: fixed;
   z-index: 9;
-  width: 100%;
+  width: 100vw;
   height: 56px;
   padding: 8px 24px;
   background-color: $primary-dark;
