@@ -49,6 +49,21 @@ const resolvers = {
 
       return artData;
     },
+
+    getAllArtCountForUser: async (parent, { username }, context) => {
+      if (!username) {
+        throw new Error('Username must be provided');
+      }
+    
+      const user = await User.findOne({ username: username });
+    
+      if (!user) {
+        throw new Error('User not found');
+      }
+  
+      return user.art.length;
+    },
+    
   },
 
   Mutation: {

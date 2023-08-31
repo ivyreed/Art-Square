@@ -9,13 +9,16 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
+import { useQuery } from "@apollo/client";
+import { GET_ART_COUNT_FOR_USER } from "./utils/queries";
+import { QUERY_ME } from "./utils/queries";
+import { useState, useEffect } from "react";
+// import { UserProvider, useUser } from './UserContext';
+
 // import UploadWidget from './components/uploadWidget';
 import ArtGallery from './pages/ArtGallery';
 import Navbar from './components/Navbar';
 import ProfileBar from './components/profilebar';
-
-
-
 
 
 const httpLink = createHttpLink({
@@ -37,26 +40,63 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-function App() {
+function MainApp() {
   const isLoggedIn = AuthService.loggedIn();
+
+  const [user, setUser] = useState(null);
+
+  const { loading, error, data } = useQuery(QUERY_ME, {
+    skip: !isLoggedIn,
+    fetchPolicy: 'no-cache'
+  });
+
+  const { data: artCountData } = useQuery(GET_ART_COUNT_FOR_USER, {
+    variables: { username: user?.username },
+    skip: !user?.username,
+    fetchPolicy: 'no-cache'
+});
+
+  useEffect(() => {
+    if (data && data.me) {
+      setUser(data.me);
+    }
+  }, [data]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) {
+    console.error("Error:", error);
+    return <p>Error: {error.message}</p>;
+  }
+
+
+const numberOfImages = artCountData?.getAllArtCountForUser || 0;
+console.log("Number of Images:", numberOfImages);
+
   return (
-    <ApolloProvider client={client}>
+    <>
       <Navbar />
       {isLoggedIn && (
         <ProfileBar
-          username="test_user"
+        username={user?.username || 'default_username'}
           avatarUrl="https://via.placeholder.com/150"
           firstName="John"
           lastName="Doe"
-          numberOfImages={10}
+          numberOfImages={numberOfImages}
         />
       )}
       <div className='widgetContainer'>
         <ArtGallery isLoggedIn={isLoggedIn} />
       </div>
       <Outlet />
-    </ApolloProvider>
+    </>
   );
 }
 
+function App() {
+  return (
+    <ApolloProvider client={client}>
+                <MainApp />
+    </ApolloProvider>
+  );
+}
 export default App;

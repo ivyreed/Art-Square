@@ -35,6 +35,7 @@ const typeDefs = `#graphql
   type Query {
     me: User
     getGalleryImages: [ArtImage]
+    getAllArtCountForUser(username: String!): Int
   }
 
   type Mutation {

@@ -7,7 +7,7 @@ export const QUERY_ME = gql`
       username
       art {
           creators
-          artId
+          _id
           description
           image
           title
@@ -27,4 +27,12 @@ export const GET_GALLERY_IMAGES = gql`
     }
   }
 `;
+
+export const GET_ART_COUNT_FOR_USER = gql`
+  query GetAllArtCountForUser($username: String!) {
+    getAllArtCountForUser(username: $username) 
+    
+  }
+`;
+
 

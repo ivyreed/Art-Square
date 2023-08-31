@@ -1,7 +1,9 @@
 import "../assets/styles/probanner.css";
 import profileImage from "../assets/images/profile.jpg";
 
-const ProfileBar = ({ username, avatarUrl, numberOfImages }) => {
+
+
+const ProfileBar = ({ username, avatarUrl, numberOfImages}) => {
   return (
     <div className="profile-banner">
       <div className="profile-container">

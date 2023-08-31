@@ -48,6 +48,13 @@
   z-index: 1;
 }
 
+.rating-btn:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+
 .image-card-overlay:hover .rating-overlay {
   opacity: 1;
   transition: opacity 0.3s;
