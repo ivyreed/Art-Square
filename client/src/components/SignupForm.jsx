@@ -45,7 +45,11 @@ const SignupForm = ({ handleModalClose, isActive }) => {
       <div className="modal-bg" onClick={handleModalClose}>
         <ModalBg isActive={isActive} />
       </div>
-      {showAlert && <div>Something went wrong with your signup!</div>}
+      {showAlert && (
+        <div className="validation-alert">
+          Something went wrong with your signup!
+        </div>
+      )}
       <form onSubmit={handleFormSubmit}>
         <div className="input-container">
           <label htmlFor="username">Username</label>
