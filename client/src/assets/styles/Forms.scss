@@ -67,3 +67,11 @@ form {
   left: 0;
   top: 0;
 }
+
+.validation-alert {
+  display: flex;
+  background-color: white;
+  color: $primary-dark;
+  padding: 8px;
+  z-index: 10;
+}

@@ -71,4 +71,12 @@ form .input-container input {
   height: 100vh;
   left: 0;
   top: 0;
+}
+
+.validation-alert {
+  display: flex;
+  background-color: white;
+  color: hsl(30, 8%, 10%);
+  padding: 8px;
+  z-index: 10;
 }/*# sourceMappingURL=forms.css.map */

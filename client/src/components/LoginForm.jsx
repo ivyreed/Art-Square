@@ -43,7 +43,10 @@ const LoginForm = ({ handleModalClose, isActive }) => {
         <ModalBg isActive={isActive} />
       </div>
       {showAlert && (
-        <div>Something went wrong with your login credentials!</div>
+        <div className="validation-alert">
+          Something went wrong with your login credentials!
+          {console.log(alert)}
+        </div>
       )}
       <form onSubmit={handleFormSubmit}>
         <div className="input-container">

@@ -52,4 +52,29 @@ body {
   .gallery-image:hover {
     transform: scale(1);
   }
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 100vw;
+  height: 100vh;
+}
+.welcome-container .welcome-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.welcome-container .welcome-box img {
+  max-width: 1920px;
+  width: 50vw;
+  margin-bottom: 2rem;
+}
+.welcome-container .welcome-box .welcome-btn {
+  width: 100%;
+  border-radius: 0 0 0.15rem 0.15rem;
 }/*# sourceMappingURL=art.css.map */
