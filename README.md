@@ -21,7 +21,7 @@
 
 ## Description
 
-Description here
+Getting tired of Instagram? tired of only getting a yes or no response on art that you have been working at nonstop for the last 12 years? Introducing Art Square! Here, your art will be rated 1-5 by the mass population! Getting a more precise idea of how good or bad your art looks could be the difference between you becoming the next Picasso, or becoming straight-up washed-out trash!
 
 ## License
 
@@ -47,18 +47,18 @@ Description here
 
 ### Home Page
 
-![image]
+![image](./images/homescreen.png)
 ### Signup Page
 
-![image]
+![image](./images/signup.png)
 
 ### Login Page
 
-![image]
+![image](./images/login.png)
 
-### Project Page
+### Profile Page
 
-![image]
+![image](./images/profile.png)
 
 ## Run Locally
 
