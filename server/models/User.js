@@ -1,19 +1,10 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Book.js
 const {artSchema} = require('./Art');
 
 const userSchema = new Schema(
   {
-    // firstName: {
-    //   type: String,
-    //   required: true,
-    // },
-    // lastName: {
-    //   type: String,
-    //   required: true,
-    // },
     username: {
       type: String,
       required: true,
@@ -51,10 +42,6 @@ userSchema.pre('save', async function (next) {
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
-
-// userSchema.virtual('fullName').get(function () {
-//   return this.firstName + ' ' + this.lastName;
-// });
 
 const User = model('User', userSchema);
 

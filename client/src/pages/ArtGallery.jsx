@@ -7,7 +7,7 @@ import ImageCard from "../components/ImageCard.jsx";
 import Welcome from "../assets/images/welcome.svg";
 import "../assets/styles/art.css";
 import Auth from "../utils/auth";
-import NavBrand from "../assets/images/desktop_brand.svg";
+// import NavBrand from "../assets/images/desktop_brand.svg";
 
 const ArtGallery = () => {
   const { loading, data } = useQuery(GET_GALLERY_IMAGES);
@@ -20,7 +20,7 @@ const ArtGallery = () => {
   const galleryImages = data?.getGalleryImages || [];
 
   const handleUpdateRating = (rating) => {
-    // Implement your rating update logic here
+
     console.log("Updated rating:", rating);
   };
 
