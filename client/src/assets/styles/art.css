@@ -74,6 +74,11 @@ body {
   width: 50vw;
   margin-bottom: 2rem;
 }
+@media (max-width: 860px) {
+  .welcome-container .welcome-box img {
+    width: calc(100vw - 48px);
+  }
+}
 .welcome-container .welcome-box .welcome-btn {
   width: 100%;
   border-radius: 0 0 0.15rem 0.15rem;
