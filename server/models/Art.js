@@ -12,7 +12,6 @@ const artSchema = new Schema({
   },
   artUrl: {
     type: String,
-    unique: true,
     required: true,
   },
   image: {
