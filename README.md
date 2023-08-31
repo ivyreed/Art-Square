@@ -1,8 +1,7 @@
 # Art Square
 
-<details>
-    <summary><h2>Table of Contents</h2></summary>
 
+## Table Of Contents
 - [Art Squre](#art-square)
   - [Description](#description)
   - [License](#license)
@@ -17,7 +16,6 @@
   - [Acknowledgements](#acknowledgements)
   - [Contributors](#contributors)
 
-</details>
 
 ## Description
 
