@@ -2,10 +2,8 @@ import React from "react";
 import RatingComponent from "./RatingComponent";
 import "../assets/styles/ImageCard.css";
 
-const ImageCard = ({ image, updateRating, artUrl, rating }) => {
-  console.log(image)
-  console.log("Rating for Image:", rating);
-  console.log("ImageCard props:", image, rating);
+const ImageCard = ({ updateRating, artUrl }) => {
+
 
   return (
     <div className="image-card-overlay">

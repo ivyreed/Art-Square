@@ -10,7 +10,7 @@ const roundToOneDecimal = (num) => {
 }
 
 const RatingComponent = ({ updateRating, artUrl, username }) => {
-  console.log(artUrl);
+
   const [userRating, setUserRating] = useState(null);
   const [hasRated, setHasRated] = useState(false);
   const [addRatingToArt] = useMutation(ADD_RATING_TO_ART);

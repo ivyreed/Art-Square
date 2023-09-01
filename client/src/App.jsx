@@ -13,9 +13,6 @@ import { useQuery } from "@apollo/client";
 import { GET_ART_COUNT_FOR_USER } from "./utils/queries";
 import { QUERY_ME } from "./utils/queries";
 import { useState, useEffect } from "react";
-// import { UserProvider, useUser } from './UserContext';
-
-// import UploadWidget from './components/uploadWidget';
 import ArtGallery from './pages/ArtGallery';
 import Navbar from './components/Navbar';
 import ProfileBar from './components/profilebar';
