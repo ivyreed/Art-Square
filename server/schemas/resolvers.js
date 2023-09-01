@@ -1,7 +1,6 @@
 const { signToken } = require("../utils/auth");
 const { User, Art } = require("../models");
 const { AuthenticationError } = require("apollo-server");
-// const { artSchema } = require('../models/Art');
 const cloudinary = require("cloudinary").v2;
 
 const resolvers = {
